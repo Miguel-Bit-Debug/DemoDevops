@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  demo_cqrs:
+    container_name: democqrs
+    image: demo-cqrs
+    volumes:
+      - dotnet-volume-app:/data
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - 5000:80
+
+volumes:
+  dotnet-volume-app: {}
